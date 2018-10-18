@@ -1,0 +1,20 @@
+{
+  "name": "@code.gov/cautious",
+  "version": "0.0.1",
+  "description": "Cautious Utility Functions in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSA/cautious.git"
+  },
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/GSA/cautious/issues"
+  },
+  "homepage": "https://github.com/GSA/cautious#readme",
+  "private": true
+}
