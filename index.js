@@ -54,6 +54,10 @@ function overlaps(array1, array2) {
   return Array.isArray(array1) && array1.some(item => includes(array2, item))
 }
 
+function range(n) {
+  return [...Array(n).keys()]
+}
+
 function some(array) {
   return Array.isArray(array) && array.length > 0;
 }
@@ -66,6 +70,7 @@ module.exports = {
   join,
   map,
   overlaps,
+  range,
   run,
   some
 };
