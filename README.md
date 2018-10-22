@@ -1,11 +1,11 @@
 # cautious
-(WIP) Cautious Utility Functions in JavaScript
+Cautious Utility Functions in JavaScript
 
 # why?
-We have found ourselves reusing a lot of the same null-checking and try-catching for function calls because we can't always guarantee that the data we are processing is clean.  This is especially useful for front-end web develompent because we don't want a site to crash because of a little dirty data.
+We deal with a lot of dirty data. We have found ourselves rewriting a lot of the same null-checking and try-catching patterns because we can't guarantee that the data we are processing is clean.  Instead of rewriting again and again, lets write just once some convience functions with null-checking and try-catching inside of them and use those throughout our tech stack.
 
 # when not to use this
-You probably don't need this library if you completely control the input data of your site and don't want your site to load if there's an error in the data
+Your data is clean and reliably sticks to a certain schema
 
 # examples
 ## before
