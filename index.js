@@ -55,7 +55,27 @@ function overlaps(array1, array2) {
 }
 
 function range(n) {
-  return [...Array(n).keys()]
+  try {
+    if (n) {
+      return [...Array(n).keys()]
+    } else {
+      return []
+    }
+  } catch (error) {
+    return []
+  }
+}
+
+function length(inpt) {
+  try {
+    if (typeof inpt === 'string') {
+      return inpt.length;
+    } else if (Array.isArray(inpt)) {
+      return inpt.length
+    }
+  } catch (error) {
+    return 0;
+  }
 }
 
 function some(array) {
@@ -67,6 +87,7 @@ module.exports = {
   excludes,
   has,
   includes,
+  length,
   join,
   map,
   overlaps,

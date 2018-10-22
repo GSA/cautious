@@ -1,3 +1,6 @@
+# alpha version
+This code should not be used in production.  It is prone to breaking changes.
+
 # cautious
 Cautious Utility Functions in JavaScript
 
