@@ -1,4 +1,4 @@
-export function run(item, func) {
+function run(item, func) {
   try {
     return item[func]()
   } catch (error) {
@@ -6,7 +6,7 @@ export function run(item, func) {
   }
 }
 
-export function capitalize(string) {
+function capitalize(string) {
   try {
     return string[0].toUpperCase() + string.substring(1)
   } catch (error) {
@@ -14,7 +14,7 @@ export function capitalize(string) {
   }
 }
 
-export function join(array, joiner) {
+function join(array, joiner) {
   try {
     return array.join(joiner)
   } catch (error) {
@@ -22,7 +22,7 @@ export function join(array, joiner) {
   }
 }
 
-export function map(array, func) {
+function map(array, func) {
   try {
     return array.map(func)
   } catch (error) {
@@ -30,7 +30,7 @@ export function map(array, func) {
   }
 }
 
-export function includes(array, item) {
+function includes(array, item) {
   try {
     return array.includes(item)
   } catch (error) {
@@ -38,11 +38,11 @@ export function includes(array, item) {
   }
 }
 
-export function excludes(array, item) {
+function excludes(array, item) {
   return includes(array, item) === false
 }
 
-export function has(obj, key) {
+function has(obj, key) {
   try {
     return obj.hasOwnProperty(key)
   } catch (error) {
@@ -50,11 +50,22 @@ export function has(obj, key) {
   }
 }
 
-export function overlaps(array1, array2) {
+function overlaps(array1, array2) {
   return Array.isArray(array1) && array1.some(item => includes(array2, item))
 }
 
-export function some(array) {
+function some(array) {
   return Array.isArray(array) && array.length > 0;
 }
 
+module.exports = {
+  capitalize,
+  excludes,
+  has,
+  includes,
+  join,
+  map,
+  overlaps,
+  run,
+  some
+};

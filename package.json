@@ -1,10 +1,9 @@
 {
   "name": "@code.gov/cautious",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cautious Utility Functions in JavaScript",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GSA/cautious.git"
