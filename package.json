@@ -4,7 +4,6 @@
   "description": "Cautious Utility Functions in JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -15,6 +14,5 @@
   "bugs": {
     "url": "https://github.com/GSA/cautious/issues"
   },
-  "homepage": "https://github.com/GSA/cautious#readme",
-  "private": true
+  "homepage": "https://github.com/GSA/cautious#readme"
 }
