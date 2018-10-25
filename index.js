@@ -66,7 +66,23 @@ function range(n) {
   }
 }
 
-function length(inpt) {
+function round(n) {
+  try {
+    return Math.round(n * 10) / 10
+  } catch (error) {
+    return null
+  }
+}
+
+function startsWith(string, starter) {
+  try {
+    return string.substring(0, starter.length) === starter
+  } catch (error) {
+    return false
+  }
+}
+
+function len(inpt) {
   try {
     if (typeof inpt === 'string') {
       return inpt.length;
@@ -87,11 +103,12 @@ module.exports = {
   excludes,
   has,
   includes,
-  length,
+  len,
   join,
   map,
   overlaps,
   range,
   run,
-  some
+  some,
+  startsWith
 };
