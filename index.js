@@ -14,6 +14,40 @@ function capitalize(string) {
   }
 }
 
+function clone(item){
+  try {
+    return JSON.parse(JSON.stringify(item))
+  } catch (error) {
+    return item
+  }
+}
+
+function equal(a, b) {
+  if (equalNumbers(a, b)) {
+     return true
+  } else if (equalJSON(a, b)) {
+    return true
+  } else {
+    return false
+  }
+}
+
+function equalNumbers(a, b) {
+  try {
+    return Number(a) === Number(b)
+  } catch (error) {
+    return false
+  }
+}
+
+function equalJSON(a, b) {
+  try {
+    return JSON.stringify(a) === JSON.stringify(b)
+  } catch (error) {
+    return false
+  }
+}
+
 function join(array, joiner) {
   try {
     return array.join(joiner)
@@ -50,6 +84,16 @@ function has(obj, key) {
   }
 }
 
+function last(iterable, index) {
+  try {
+    if (Array.isArray(iterable) || typeof iterable === 'string') {
+      return iterable[iterable.length - 1]
+    }
+  } catch (error) {
+    return undefined
+  }
+}
+
 function overlaps(array1, array2) {
   return Array.isArray(array1) && array1.some(item => includes(array2, item))
 }
@@ -71,6 +115,14 @@ function round(n) {
     return Math.round(n * 10) / 10
   } catch (error) {
     return null
+  }
+}
+
+function endsWith(string, ender) {
+  try {
+    return string.substring(string.length - ender.length) === ender
+  } catch (error) {
+    return false
   }
 }
 
@@ -98,17 +150,44 @@ function some(array) {
   return Array.isArray(array) && array.length > 0;
 }
 
+function sortBy(array, func) {
+  try {
+    return array.sortBy(func)
+  } catch (error) {
+    return array
+  }
+}
+
+
+function penultimate(iterable, index) {
+  try {
+    if (Array.isArray(iterable) || typeof iterable === 'string') {
+      return iterable[iterable.length - 2]
+    }
+  } catch (error) {
+    return undefined
+  }
+}
+
 module.exports = {
   capitalize,
+  clone,
+  endsWith,
+  equal,
+  equalJSON,
+  equalNumbers,
   excludes,
   has,
   includes,
+  last,
   len,
   join,
   map,
   overlaps,
+  penultimate,
   range,
   run,
   some,
+  sortBy,
   startsWith
 };
