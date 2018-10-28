@@ -185,7 +185,7 @@ function penultimate(iterable, index) {
   }
 }
 
-export function isSet(input) {
+function isSet(input) {
   return input && typeof input === 'object' && input.has && input.add
 }
 
@@ -197,7 +197,7 @@ function isURL(string) {
   }
 }
 
-export function onEachItem(input, func) {
+function onEachItem(input, func) {
   if (Array.isArray(input)) {
     return input.map(item => run(item, func))
   } else if (isSet(input)) {
@@ -207,15 +207,15 @@ export function onEachItem(input, func) {
   }
 }
 
-export function lower(input) {
+function lower(input) {
   return onEachItem(input, 'toLowerCase')
 }
 
-export function upper(input) {
+function upper(input) {
   return onEachItem(input, 'toUpperCase')
 }
 
-export function trim(input) {
+function trim(input) {
   return onEachItem(input, 'trim')
 }
 
