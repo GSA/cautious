@@ -56,6 +56,22 @@ function join(array, joiner) {
   }
 }
 
+function find(array, func) {
+  try {
+    return array.find(func)
+  } catch (error) {
+    return undefined
+  }
+}
+
+function filter(array, func) {
+  try {
+    return array.filter(func)
+  } catch (error) {
+    return array
+  }
+}
+
 function map(array, func) {
   try {
     return array.map(func)
@@ -169,6 +185,40 @@ function penultimate(iterable, index) {
   }
 }
 
+export function isSet(input) {
+  return input && typeof input === 'object' && input.has && input.add
+}
+
+function isURL(string) {
+  try {
+    return typeof string === 'string' && string.startsWith('http')
+  } catch (error) {
+    return false
+  }
+}
+
+export function onEachItem(input, func) {
+  if (Array.isArray(input)) {
+    return input.map(item => run(item, func))
+  } else if (isSet(input)) {
+    return Set(Array.from(input).map(item => run(item, func)))
+  } else {
+    return run(input, func)
+  }
+}
+
+export function lower(input) {
+  return onEachItem(input, 'toLowerCase')
+}
+
+export function upper(input) {
+  return onEachItem(input, 'toUpperCase')
+}
+
+export function trim(input) {
+  return onEachItem(input, 'trim')
+}
+
 module.exports = {
   capitalize,
   clone,
@@ -177,17 +227,24 @@ module.exports = {
   equalJSON,
   equalNumbers,
   excludes,
+  find,
+  filter,
   has,
   includes,
+  isURL,
   last,
   len,
+  lower,
   join,
   map,
+  onEachItem,
   overlaps,
   penultimate,
   range,
   run,
   some,
   sortBy,
-  startsWith
+  startsWith,
+  trim,
+  upper
 };
