@@ -1,6 +1,6 @@
 {
   "name": "@code.gov/cautious",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Cautious Utility Functions in JavaScript",
   "main": "index.js",
   "scripts": {},

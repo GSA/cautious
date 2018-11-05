@@ -1,3 +1,38 @@
+function assign(target, src) {
+  try {
+    for (let key in src) {
+      const value = src[key]
+      if (value !== undefined) {
+        target[key] = value
+      }
+    }
+  } catch (error) {
+
+  }
+}
+
+function forEach(array, func) {
+  try {
+    array.forEach(func)
+  } catch (error) {
+
+  }
+}
+
+function trimUndefined(target, src) {
+  try {
+    for (let key in target) {
+      const value = target[key]
+      if (value === undefined) {
+        delete target[key]
+      }
+    }
+    return target
+  } catch (error) {
+    return target
+  }
+}
+
 function run(item, func) {
   try {
     return item[func]()
@@ -219,6 +254,7 @@ function trim(input) {
   return onEachItem(input, 'trim')
 }
 
+
 module.exports = {
   capitalize,
   clone,
@@ -227,6 +263,7 @@ module.exports = {
   equalJSON,
   equalNumbers,
   excludes,
+  forEach,
   find,
   filter,
   has,
@@ -246,5 +283,6 @@ module.exports = {
   sortBy,
   startsWith,
   trim,
+  trimUndefined,
   upper
 };
